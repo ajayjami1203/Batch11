@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>assigement</title>
+        <style>
+            body{
+                background-color: blue;
+            }
+
+            .a{
+                text-align: center;
+                background-color: #fff;
+                height: auto;
+                margin-left: 550px;
+                margin-right: 550px;
+                margin-top: 50px;
+                padding: 20px;
+                border-radius: 20px;           
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <form class="a" action="form1.html" method="get">
+                <h2>Registration form</h2>  <br>
+                <label for="name"> Full Name:</label> <br>
+                <input type="text" required>  <br>
+                <br>
+                <label for="email">Email Address:</label> <br>
+                <input type="email"  required>    <br>
+                <br>     
+                <label for="password">Password:</label>  <br>
+                <input type="password"  required>   <br>
+                <br>
+                <label for="gender">Gender:</label> 
+                <label for="male">
+                    <input type="radio" id="male" name="gender" value="male" required> Male
+                </label> 
+                <label for="female">
+                    <input type="radio" id="female" name="gender" value="female" required> Female
+                </label>  <br>
+                <br>
+                <label for="country">Country:</label>  <br>
+                <select id="country" name="country" required>
+                    <option value="in">India</option>
+                    <option value="usa">USA</option>
+                    <option value="cnd">Canada</option>
+                    <option value="uk">UK</option>
+
+                </select>   <br>
+                <br>
+                <label for="about">About you:</label> <br>
+                <input type="text" placeholder="Tell us something about you " >    <br>
+                <br> 
+                <button type="submit" style="background-color: blue;"> Submit </button> 
+                <br>
+                
+            </form>
+        </div>
+    </body>
+</html>
