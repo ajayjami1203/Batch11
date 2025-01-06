@@ -1,0 +1,74 @@
+<html>
+    <style>
+        .body{
+            background-color: blue;
+        }
+        
+        .h1{
+            text-align: center;
+             color: white;
+             margin-top: 20%;
+        }
+    </style>
+    <body class="body">
+    <div style="background-color: black;  margin-top: 60px; margin-left: 400px; margin-right: 400px;  border-radius: 50px;  padding-top: 1px;">
+        <div>
+        <h1 class="h1">Calculator</h1>
+        <form style="text-align: center;">
+            <input id="num1" type="number" placeholder="Enter first number">  <br>
+            <br>
+            <input id="num2" type="number" placeholder="Enter second number">  <br>
+            <br>
+            <button type="button" onclick="add()">+</button>   <br>
+            <br>
+            <button type="button" onclick="sub()">-</button>   <br> 
+            <br>
+            <button type="button" onclick="mul()">*</button>   <br>
+            <br>
+            <button type="button" onclick="div()">/</button>   <br>  
+            <br>
+            <button type="button" onclick="mod()">%</button>   <br>
+            <br>
+
+            <h2 id="result" style="color: white;"> Result :</h2>
+
+            <br>
+        </div>
+    </div>
+        </form>
+        <script>
+            function add(){
+                var num1 = +document.getElementById("num1").value;
+                var num2 = +document.getElementById("num2").value;
+                document.getElementById("result").innerHTML = `Result: ${num1 + num2}`;
+            }
+
+            function sub(){
+                var num1 = +document.getElementById("num1").value;
+                var num2 = +document.getElementById("num2").value;
+                document.getElementById("result").innerHTML = `Result: ${num1 - num2}`;
+            }
+
+            function mul(){
+                var num1 = +document.getElementById("num1").value;
+                var num2 = +document.getElementById("num2").value;
+                document.getElementById("result").innerHTML = `Result: ${num1 * num2}`;
+            }
+
+            function div(){
+                var num1 = +document.getElementById("num1").value;
+                var num2 = +document.getElementById("num2").value;
+                document.getElementById("result").innerHTML = `Result: ${num1 / num2}`;
+            }
+
+            function mod(){
+                var num1 = +document.getElementById("num1").value;
+                var num2 = +document.getElementById("num2").value;
+                document.getElementById("result").innerHTML = `Result: ${num1 % num2}`;
+            }
+
+
+
+        </script>
+    </body>
+</html>
