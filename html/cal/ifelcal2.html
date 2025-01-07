@@ -1,0 +1,93 @@
+<html>
+    <style>
+        .body{
+            background-color: midnightblue;
+        }
+        
+        .h1{
+            text-align: center;
+             color: white;
+             margin-top: 1%;
+        }
+    </style>
+    <body class="body">
+    <div style="background-color: black;  margin-top: 60px; margin-left: 500px; margin-right: 500px;  border-radius: 100px;  padding-top: 1px;">
+        <div>
+        <h1 class="h1">Calculator</h1>
+        <form style="text-align: center;">
+            <input id="num1" type="number" placeholder="Enter first number">  <br>
+            <br>
+            <input id="num2" type="number" placeholder="Enter second number">  <br>
+            <br>
+            <button type="button" onclick="caluculator(`+`)">add</button>   <br>
+            <br>
+            <button type="button" onclick="caluculator(`-`)">sub</button>   <br> 
+            <br>
+            <button type="button" onclick="caluculator(`*`)">mul</button>   <br>
+            <br>
+            <button type="button" onclick="caluculator(`/`)">div</button>   <br>  
+            <br>
+            <button type="button" onclick="caluculator(`%`)">mod</button>   <br>
+            <br>
+            <button type="button" onclick="caluculator(`^`)">exp</button>   <br>
+            <br>
+            <button type="button" onclick="caluculator(`sqrt1`)">sqrt1</button> <br>
+            <br>
+            <button type="button" onclick="caluculator(`sqrt2`)">sqrt2</button>
+
+            <h2 id="result" style="color: white;"> Result :</h2>
+
+            <br>
+        </div>
+    </div>
+        </form>
+
+
+        <script>
+
+            function caluculator(operator){
+                const num1=parseFloat(document.getElementById("num1").value);
+                const num2=parseFloat(document.getElementById("num2").value);
+
+
+                if (isNaN(num1) || isNaN(num2) ) {
+                    document.getElementById(`result`).innerHTML="error : plesse enter valid Number";
+                    return;
+                }
+           
+
+            let result;
+            if (operator=== '+'){
+                result= num1+num2;
+            }
+            else if (operator=== '-'){
+                result= num1-num2;
+            }
+            else if (operator=== '*'){
+                result= num1*num2;
+            }
+            else if (operator=== '/'){
+                result= num1/num2;
+            }
+            else if (operator=== '%'){
+                result= num1%num2;
+            }
+            else if (operator=== '^'){
+                result= num1**num2;
+            }
+            else if (operator=== 'sqrt1'){
+                result= Math.sqrt(num1);
+                
+            }
+            else if (operator=== 'sqrt2'){
+                result= Math.sqrt(num2);
+            }
+
+
+
+                document.getElementById('result').innerText= `Result : ${result}`;
+
+        }
+        </script>
+    </body>
+</html>

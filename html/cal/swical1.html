@@ -1,0 +1,97 @@
+<html>
+    <style>
+        .body{
+            background-color: darkgreen;
+        }
+        
+        .h1{
+            text-align: center;
+             color: rgb(20, 18, 18);
+             margin-top: 0.001%;
+        }
+    </style>
+    <body class="body">
+    <div style="background-color: rgb(233, 228, 228);  margin-top: 60px; margin-left: 500px; margin-right: 500px;  border-radius: 100px;  padding-top: 5px;">
+        <div>
+        <h1 class="h1">Calculator</h1>
+        <form style="text-align: center;">
+            <input id="num1" type="number" placeholder="Enter first number">   <br>   
+            <br>
+            <input id="num2" type="number" placeholder="Enter second number">  <br>
+            <br>
+            <button type="button" onclick="caluculator(`+`)">add</button>   <br>
+            <br>
+            <button type="button" onclick="caluculator(`-`)">sub</button>   <br> 
+            <br>
+            <button type="button" onclick="caluculator(`*`)">mul</button>   <br>
+            <br>
+            <button type="button" onclick="caluculator(`/`)">div</button>   <br>  
+            <br>
+            <button type="button" onclick="caluculator(`%`)">mod</button>   <br>
+            <br>
+            <button type="button" onclick="caluculator(`^`)">exp</button>   <br>
+            <br>
+            <button type="button" onclick="caluculator(`sqrt1`)">sqrt1</button>  <br>
+            <br>
+            <button type="button" onclick="caluculator(`sqrt2`)">sqrt2</button>  <br>
+            
+
+            <h2 id="result" style="color: blue;"> Result :</h2>
+
+            <br>
+        </div>
+    </div>
+        </form>
+
+
+        <script>
+
+            function caluculator(operator){
+                const num1=parseFloat(document.getElementById("num1").value);
+                const num2=parseFloat(document.getElementById("num2").value);
+
+
+                if (isNaN(num1) || isNaN(num2) ) {
+                    document.getElementById(`result`).innerHTML="error : plesse enter valid Number";
+                    return;
+                }
+           
+
+            let result;
+            switch (operator) {
+                    case '+' :
+                    result= num1+num2;
+                    break;
+                    case '-' :
+                    result= num1-num2;
+                    break;
+                    case '*' :
+                    result= num1*num2;
+                    break;
+                    case '/' :
+                    result= num2 !== 0 ? num1/num2 : "Error : Division by zero!" ;                  
+                     break;
+                    case '%' :     
+                    result= num1%num2;
+                    break;
+                    case '^' :
+                    result= num1**num2;
+                    break;
+                    case 'sqrt1' :
+                    result=Math.sqrt(num1);
+                    break;
+                    case 'sqrt2' : 
+                    result= Math.sqrt(num2);
+                    break;
+
+
+                    default :
+                    result= "Invalide operator !";
+            }
+
+                document.getElementById('result').innerText= `Result : ${result}`;
+
+        }
+        </script>
+    </body>
+</html>
