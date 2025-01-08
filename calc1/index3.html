@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+            body{
+                background-color: rgb(12, 13, 14);
+                text-align: center;
+            }
+
+            button{
+                background-color: white;
+                height: 50px;
+                width: 65px;
+                text-align: center;
+                border-radius: 18px;
+                border-inline-color: black;
+                font-size: 18px;
+                border: 3px solid black;
+            }
+            h1{
+                color: white;
+            }
+
+            .div{
+                background-color: rgb(31, 5, 53);
+                justify-content: center;
+                align-items: center;
+                margin-left: 500px;
+                margin-right: 500px;
+                margin-top: 100px;
+                border-radius: 50px;
+                border: 4px  solid green;
+            }
+            
+
+            .button-container{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+                padding: 10px;
+            }
+
+            .display{
+                background-color: black;
+                color: white;
+                justify-content: center;
+                padding: 10px;
+                margin-left: 40px;
+                margin-right: 40px;
+                border-radius: 8px;
+                font-size: 20px;
+                border: 1.5px solid wheat;   
+            }
+
+
+             /* Media Query for Mobile Devices */
+             @media screen and (max-width: 600px) {
+                .div {
+                    width: 90%;
+                    padding: 10px;
+                }
+             }
+
+        </style>
+    </head>
+    <body>
+        <div class="div">
+            <br>
+            <h1>Main Calculator</h1>
+            <div class="display" id="display"> 0</div>
+            <div class="button-container">
+                <button onclick="clea()" style="background-color: orangered;">AC</button>
+                <button onclick="dele()" style="background-color: gray; color: white;"> <-- </button>
+                <button onclick="calcualator('%')">%</button>
+                <button onclick="calcualator('/')">/</button>    
+
+
+                <button onclick="calcualator('7')">7</button>        
+                <button onclick="calcualator('8')">8</button>        
+                <button onclick="calcualator('9')">9</button>        
+                <button onclick="calcualator('*')">*</button>    
+
+
+                <button onclick="calcualator('5')">5</button>        
+                <button onclick="calcualator('4')">4</button>        
+                <button onclick="calcualator('6')">6</button>        
+                <button onclick="calcualator('-')">-</button>    
+
+
+                <button onclick="calcualator('1')">1</button>
+                <button onclick="calcualator('2')">2</button>
+                <button onclick="calcualator('3')">3</button>    
+                <button onclick="calcualator('+')">+</button>    
+
+
+                <button onclick="calcualator('00')">00</button>
+                <button onclick="calcualator('0')">0</button>
+                <button onclick="calcualator('.')">.</button>
+                <button onclick="result()"  style="background-color: lightblue;">=</button>   
+                
+                
+
+            </div>
+        </div>
+    </body>
+       <script>
+        let currentInput ='';
+          function calcualator(value){
+            currentInput += value;
+            document.getElementById('display').innerText = currentInput;
+          }
+
+
+          function clea(){
+            currentInput ='';
+            document.getElementById('display').innerText = 0;
+          }
+
+          function result(){
+            try{
+                currentInput = eval(currentInput).toString();
+                document.getElementById('display').innerText = currentInput;
+            }
+            catch(e){
+                
+                document.getElementById('display').innerText = "Error!";
+                currentInput= '';
+            }
+
+          }
+
+
+          function dele(){
+           currentInput = currentInput.slice(0,-1);
+           document.getElementById('display').innerText = currentInput;
+          }
+        
+
+       </script>
+</html>
